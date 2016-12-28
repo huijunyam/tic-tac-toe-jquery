@@ -18,33 +18,30 @@ h1 {
   font-size: 100px;
   font-weight: bold;
   font-family: fantasy;
-  text-align: center;
-}
-
-figure {
-  display: flex;
-  flex-direction: column;
-  /*position: relative;*/
 }
 
 ul {
-  display: block;
-  margin: 30px auto;
   width: 330px;
   list-style: none;
-  align-content: center;
+  margin: 0 auto;
 }
 
-ul li {
+.cf:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+li {
+  float: left;
   width: 100px;
   height: 100px;
-  float: left;
   border: 5px solid black;
   background-color: grey;
   cursor: pointer;
 }
 
-ul li:hover {
+li:hover {
   background-color: yellow;
 }
 
@@ -53,46 +50,32 @@ ul li:hover {
   cursor: default;
 }
 
-ul li.x:after {
-  width: 100px;
-  height: 100px;
-  float: left;
-  text-align: center;
+.x:hover, .o:hover {
+  background: white;
+}
+
+.x:after, .o:after {
+  display: block;
+  width: 100%;
   font-size: 80px;
+}
+
+.x:after {
   content: "x";
 }
 
-ul li.o:after {
-  width: 100px;
-  height: 100px;
-  float: left;
-  text-align: center;
-  font-size: 80px;
+.o:after {
   content: "o";
 }
 
-.cf {
-  content: "";
-  display: block;
-  clear: both;
+.winner-x .x, .winner-o .o {
+  background-color: green;
+  color: yellow;
 }
 
 p {
-  /*position: absolute;*/
-  /*left: 500px;*/
-  /*top: 400px;*/
   padding-left: 45px;
   display: block;
   font-size: 50px;
   font-weight: bold;
-}
-
-.winner-x .x, .winner-o .o {
-  /*width: 100px;
-  height: 100px;
-  float: left;
-  text-align: center;
-  font-size: 80px;*/
-  background-color: green;
-  color: pink;
 }
