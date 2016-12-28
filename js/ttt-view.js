@@ -10,8 +10,7 @@ class View {
 
   bindEvents() {
     this.$el.on("click", "li", (event) => {
-      const currentSquare = event.currentTarget;
-      const $currentSquare = $(currentSquare);
+      const $currentSquare = $(event.currentTarget);
       const pos = $currentSquare.data("pos");
       const currentPlayer = this.game.currentPlayer;
       try {
@@ -33,12 +32,8 @@ class View {
           $p.text('It\'s a draw!');
         }
       }
-
-
     });
   }
-
-  makeMove($square) {}
 
   setupBoard() {
     const $ul = $('<ul>');
